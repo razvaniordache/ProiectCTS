@@ -23,7 +23,7 @@ public class Casa {
 		
 	}
 
-	public static IncapereInteligenta CreateIncapere(TipIncapere tip, String Nume, String mp) throws Exception
+	public IncapereInteligenta CreateIncapere(TipIncapere tip, String Nume, String mp) throws Exception
 	{
 		switch(tip)
 		{

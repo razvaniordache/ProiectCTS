@@ -26,88 +26,67 @@ public class Bucatarie extends IncapereInteligenta{
 	}
 
 	@Override
-	public void DeschideLumina(Incapere camera) throws ExceptieLipsaCurent, Exception {
-		if(camera instanceof IncapereInteligenta)
-		{
-			IncapereInteligenta Bucatarie= (IncapereInteligenta)camera;
+	public void DeschideLumina() throws ExceptieLipsaCurent {
+
 			Random rand = new Random();
 			int  n = rand.nextInt(50);
 			if (n==30)
 			{
-				throw new ExceptieLipsaCurent("Lipsa Curent "+Bucatarie.getNume());
+				throw new ExceptieLipsaCurent("Lipsa Curent "+this.getNume());
 			}
 			else
 			{
-				Bucatarie.setLuminaAprinsa(true);
+				this.setLuminaAprinsa(true);
 			}
-			
-		}
-		else throw new Exception("Is not instance of IncapereInteligenata");
 		
 	}
 
 	@Override
-	public void InchideLumina(Incapere camera) throws Exception {
-		if(camera instanceof IncapereInteligenta)
-		{
-			IncapereInteligenta Bucatarie= (IncapereInteligenta)camera;
-			Bucatarie.setLuminaAprinsa(false);
-		}
-		else throw new Exception("Is not instance of IncapereInteligenata");
+	public void InchideLumina() 
+	{
+			System.out.println("Lumina stinasa in "+this.getNume());
+			this.setLuminaAprinsa(false);
 		
 	}
 
 	@Override
-	public void PornesteAC(Incapere camera, int grade) throws ExceptieLipsaCurent, Exception {
-		if(camera instanceof IncapereInteligenta)
-		{
-			IncapereInteligenta Bucatarie= (IncapereInteligenta)camera;
+	public void PornesteAC(int grade) throws Exception {
+
 			if( grade>15 && grade < 35 )
 			{
-				Bucatarie.setTemperatura(grade);
+				this.setTemperatura(grade);
 			}
 			else throw new Exception("Temperatura trebuie sa fie intre 15 si 35 grade C");
-			
-		}
-		else throw new Exception("Is not instance of IncapereInteligenata");
+
 		
 	}
 
 	@Override
-	public void InchideAC(Incapere camera) {
-		if(camera instanceof IncapereInteligenta)
-		{
-			IncapereInteligenta Bucatarie= (IncapereInteligenta)camera;
-			System.out.println("AC Inchis in "+Bucatarie.getNume());
-		}
+	public void InchideAC() {
 		
+			System.out.println("AC Inchis in "+this.getNume());
 	}
 
 	@Override
-	public void StareUsa(Incapere camera, boolean stare) {
-		if(camera instanceof IncapereInteligenta)
-		{
-			IncapereInteligenta Baie= (IncapereInteligenta)camera;
-			Baie.setUsaDeschisa(stare);
+	public void StareUsa(boolean stare) {
+
+			this.setUsaDeschisa(stare);
 			if(true)
-				System.out.println("Usa de la "+Baie.getNume()+" este inchisa");
+				System.out.println("Usa de la "+this.getNume()+" este inchisa");
 			else
-				System.out.println("Usa de la "+Baie.getNume()+" este deschisa");
-		}
-		
+				System.out.println("Usa de la "+this.getNume()+" este deschisa");
+	
 	}
 
 	@Override
-	public String getInfo(Incapere camera) {
-		if(camera instanceof IncapereInteligenta)
-		{
-			IncapereInteligenta Bucatarie= (IncapereInteligenta)camera;
-			return "Bucataria "+ Bucatarie.getNume()+" cu o suprafata de "
-					+Bucatarie.getMetripatrati()+" are o temperatura de "
-					+Bucatarie.getTemperatura()+" grade Celsius iar sursa de apa este "+Bucatarie.isSursaApa()
-					+", sursa de gaze este "+Bucatarie.isSursaGaze();
-		}
-		else return null;
+	public String getInfo() {
+		
+		
+			return "Bucataria "+ this.getNume()+" cu o suprafata de "
+					+this.getMetripatrati()+" are o temperatura de "
+					+this.getTemperatura()+" grade Celsius iar sursa de apa este "+this.isSursaApa()
+					+", sursa de gaze este "+this.isSursaGaze();
+		
 	}
 
 }
