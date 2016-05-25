@@ -4,29 +4,35 @@ public abstract class IncapereInteligenta extends Incapere {
 	
 	private String Nume;
 	private String metripatrati;
-	private boolean AreGeam;
+	private int temperatura;
 	private boolean SursaGaze;
 	private boolean SursaApa;
 	private boolean LuminaAprinsa;
-	
+	private boolean UsaDeschisa;
 
-	public IncapereInteligenta(String nume, String metripatrati, boolean areGeam, boolean sursaGaze, boolean sursaApa,
-			boolean luminaAprinsa) {
+
+	public IncapereInteligenta(String nume, String metripatrati, int temperatura, boolean sursaGaze, boolean sursaApa,
+			boolean luminaAprinsa, boolean usaDeschisa) {
 		super();
 		Nume = nume;
 		this.metripatrati = metripatrati;
-		AreGeam = areGeam;
+		this.temperatura = temperatura;
 		SursaGaze = sursaGaze;
 		SursaApa = sursaApa;
 		LuminaAprinsa = luminaAprinsa;
+		UsaDeschisa = usaDeschisa;
 	}
+
+
 
 
 	@Override
-	public String getInfo(Incapere camera) {
-		return "IncapereInteligenta [Nume=" + Nume + ", metripatrati=" + metripatrati + ", AreGeam=" + AreGeam
-		+ ", SursaGaze=" + SursaGaze + ", SursaApa=" + SursaApa + "]";
+	public String toString() {
+		return "IncapereInteligenta [Nume=" + Nume + ", metripatrati=" + metripatrati + ", temperatura=" + temperatura
+				+ ", SursaGaze=" + SursaGaze + ", SursaApa=" + SursaApa + ", LuminaAprinsa=" + LuminaAprinsa + "]";
 	}
+
+
 
 
 	public String getNume() {
@@ -49,14 +55,21 @@ public abstract class IncapereInteligenta extends Incapere {
 	}
 
 
-	public boolean isAreGeam() {
-		return AreGeam;
+
+
+
+	public int getTemperatura() {
+		return temperatura;
 	}
 
 
-	public void setAreGeam(boolean areGeam) {
-		AreGeam = areGeam;
+
+
+	public void setTemperatura(int temperatura) {
+		this.temperatura = temperatura;
 	}
+
+
 
 
 	public boolean isSursaGaze() {
@@ -88,6 +101,21 @@ public abstract class IncapereInteligenta extends Incapere {
 		LuminaAprinsa = luminaAprinsa;
 	}
 
+
+
+
+	public boolean isUsaDeschisa() {
+		return UsaDeschisa;
+	}
+
+
+
+
+	public void setUsaDeschisa(boolean usaDeschisa) {
+		UsaDeschisa = usaDeschisa;
+	}
+
+	
 
 	
 
