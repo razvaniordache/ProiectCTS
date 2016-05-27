@@ -6,6 +6,7 @@ import java.util.List;
 import Alarm.AlertaTemperatura;
 import Alarm.SistemDePrevenireAIncendiilor;
 import Alarm.StareTemperatura;
+import StateGaraj.Garage;
 import samsung.InterfataSamsung;
 import samsung.SenzorApaSamsung;
 
@@ -84,6 +85,22 @@ public class Main {
 			StareTemperatura newStare= new StareTemperatura(Camere.get(i).getTemperatura());
 			sistemAntiIncendiu.procesare(newStare);
 		}
+		
+		//Test State
+		System.out.println("Test State ");
+		
+		Garage garaj=new Garage();
+		
+		garaj.OpenGarageDoor();
+		
+		garaj.StoreCar("B94ARY");
+		
+		garaj.StartWash();
+		
+		garaj.EjectCar("B94ARY");
+		
+		
+		
 		
 		
 
