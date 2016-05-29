@@ -11,10 +11,10 @@ public class AdaptorSamsungToLG implements InterfataTrakerCostApa{
 	
 	public boolean Proxy(String ip)
 	{
-		if(ip.substring(0,2).equals("10"))
-			return false;
-		else
+		if(ip.substring(0,3).equals("192"))
 			return true;
+		else
+			return false;
 	}
 	
 	
@@ -26,6 +26,8 @@ public class AdaptorSamsungToLG implements InterfataTrakerCostApa{
 	@Override
 	public double getCost(String ip, double PretperL) throws Exception {
 		
+		if(PretperL<=0)
+			throw new Exception("Pret per L trebuie sa fie > 0");
 		if(Proxy(ip))
 		{
 		int[] consum =new int[7];

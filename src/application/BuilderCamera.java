@@ -4,9 +4,12 @@ public class BuilderCamera {
 	
 	private CameraNormala camera=null;
 
-	public BuilderCamera(String nume,String suprafata) {
+	public BuilderCamera(String nume,String suprafata) throws Exception {
 		super();
-		this.camera = new CameraNormala(nume, suprafata, 25, false,false,false, false);
+		if(nume != null && suprafata != null)
+			this.camera = new CameraNormala(nume, suprafata, 25, false,false,false, false);
+		else
+			throw new Exception("Nu se accepta null");
 	}
 	
 	public CameraNormala build()

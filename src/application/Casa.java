@@ -14,9 +14,13 @@ public class Casa {
 	
 	public static Casa getCasa(String Denumire)
 	{
-		if(singleton == null)
+		if(singleton == null && Denumire != null)
 		{
 			singleton=new Casa(Denumire);
+		}
+		else if( Denumire == null)
+		{
+			throw new NullPointerException("Denumirea nu poate fii nula");
 		}
 		
 		return singleton;

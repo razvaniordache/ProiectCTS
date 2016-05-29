@@ -17,7 +17,7 @@ public class AlertaTemperatura extends HandlerUrgente{
 					this.next.alertaTemperatura(temperaturaCamera);
 			}
 			else
-				System.out.println("Iti arde familia !");
+				System.out.println("Boss arde ceva !!!");
 		
 	}
 

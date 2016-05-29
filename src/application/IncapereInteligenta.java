@@ -51,7 +51,8 @@ public abstract class IncapereInteligenta extends Incapere {
 
 
 	public void setMetripatrati(String metripatrati) {
-		this.metripatrati = metripatrati;
+		if(metripatrati != null)
+			this.metripatrati = metripatrati;
 	}
 
 
@@ -66,7 +67,8 @@ public abstract class IncapereInteligenta extends Incapere {
 
 
 	public void setTemperatura(int temperatura) {
-		this.temperatura = temperatura;
+		if(temperatura>5 && temperatura<50)
+			this.temperatura = temperatura;
 	}
 
 
